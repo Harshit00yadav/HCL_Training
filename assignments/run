@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [[ $# -ne 2 ]]; then
+	echo "Usage: $0 <assignment_no> <question_no>";
+	exit 1;
+fi
+
+assignment_no="assignment$1";
+question_no="Q$2";
+srcpath=$assignment_no/$question_no;
+
+if [ ! -d "$srcpath" ]; then
+	echo "[-] invalid assignment_no or question_no";
+	exit 1;
+fi
+
+echo "[+] SRC_PATH: $srcpath";
+echo "[+] building...";
+javac -d ./build $srcpath/*.java;
+echo "[+] build complete!";
+echo "[+] running compiled program...";
+echo "";
+cd ./build;
+java $assignment_no.$question_no.Main;
+echo "";
+echo "[+] execution finished.";
+echo "[+] cleaning the build...";
+rm -r $assignment_no;
+if [[ $? -ne 0 ]]; then
+	echo "[-] build not cleaned!"
+else
+	echo "[+] build cleaned!";
+fi
+cd ..;
