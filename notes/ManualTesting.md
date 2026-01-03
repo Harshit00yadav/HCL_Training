@@ -18,7 +18,6 @@
 
 
 ## Example:
-## Example
 
 | Field            | Value |
 |------------------|-------|
@@ -31,4 +30,17 @@
 | Expected Result  | Successful login and redirect to dashboard |
 | Actual Result    | Logged in and redirected to dashboard |
 | Status           | Pass |
-| Remarks          | Additional notes |
+| Remarks          | |
+
+| Field            | Value |
+|------------------|-------|
+| Test Case ID     | TC_LOGIN_02 |
+| Test Case Title  | Verify login with invalid credentials |
+| Module Name      | Login |
+| Preconditions    | User must be registered |
+| Test Steps       | 1. Open login page<br>2. Enter valid username<br>3. Enter invalid password<br>4. Click login |
+| Test Data        | username: admin<br>password: wrong@123 |
+| Expected Result  | Display error message |
+| Actual Result    | Error message displayed|
+| Status           | Pass |
+| Remarks          | |
