@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+echo -ne "\rbuilding...\r"
+javac src/project2/*.java -d ./build/
+cd build
+java project2.Main

@@ -1,0 +1,60 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>My website</title>
+		<link rel="stylesheet" type="text/css" href="./base.css">
+		<style>
+body{
+		background-color: #252525;
+		color: #ffffff;
+}
+h2 {
+		color: #aaff00;
+}
+input {
+		background-color: #000000;
+		color: #ffffff;
+}
+		</style>
+	</head>
+	<body>
+		<center><h2>Signup Form</h2></center>
+		<form method="get">
+			Username: <input type="text" name="username" value="username daal lodu"></input></br>
+			Password: <input type="password" name="password" value=""></input></br>
+			About you: <textarea class="input"></textarea></br>
+			Branch: 
+			<input type="radio" name="branch-radio">CSE</input>
+			<input type="radio" name="branch-radio">AI</input>
+			<input type="radio" name="branch-radio">DS</input>
+			<input type="radio" name="branch-radio">Other</input>
+			</br>
+			Favourite animal:
+			</br>
+			<input type="checkbox">Cat</input></br>
+			<input type="checkbox">Dog</input></br>
+			<button type="submit" style="background-color:#ff0000;color:#ffffff;border:0;">Sign Up</button>
+			<div>
+				<table border=1>
+					<tr><th>Roll_no</th><th>Name</th></tr>
+					<tr><td>1</td><td>binod</td></tr>
+					<tr><td>2</td><td>pappu</td></tr>
+				</table>
+				<iframe name="iframe1" id="IF1" src="/frame1.html"></iframe>
+			</div>
+			<div>
+				<a href="/res/cat1.avif">Click me</a>
+				<p id="fir">This is the first paragraph  osdfkla3ijoasfkdslf skdflas lsdfjlsdf ls d</p>
+				<p id="sec">This is second paragraph and it is very long. I don't want this to be seen by the client. it looks very bad</p>
+			</div>
+		</form>
+		<button id="b1" onclick="func1">Mess Up</button>
+		<script>
+document.write("Fyou");
+
+function func1(){
+	document.getElementByTagName("center").innerHTML = "Fuck";
+}
+		</script>
+	</body>
+</html>

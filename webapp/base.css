@@ -1,0 +1,23 @@
+.input {
+	background-color: #151515;
+	color: #00ffff;
+}
+
+p#fir {
+	text-align: right;
+	text-decoration: underline;
+}
+
+p#sec {
+	text-align: justify;
+	text-decoration: line-through;
+	text-transform: uppercase;
+	text-indent: 50px;
+	font-style: italic;
+}
+a:hover {
+	color: green;
+}
+a {
+	color: red;
+}
