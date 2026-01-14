@@ -1,8 +1,29 @@
 <!Doctype html>
 <html>
-	<head></head>
+	<head>
+<style>
+#b2:hover {
+		background-color: #ff0000;
+}
+#b0:hover {
+		background-color: #ff0000;
+}
+</style>
+	</head>
 	<body>
 	This is from the first frame</br>
-	<button onclick="alert('I have been clicked');">click me</button>
+	<p id="p1"></p>
+		<button id="b0" onclick="clkmef">click me</button>
+	<button id="b1" onclick="document.getElementById('p1').innerHTML = 'first button'">change 1</button>
+	<button id="b2" onclick="document.getElementById('p1').innerHTML = 'second button'">change 2</button>
+	<input type="text" name="firstfield"></input>
+	<input type="text" value="default" name="secondfield"></input>
+	<textarea></textarea>
+	<script>
+function clkmef(){
+	var p = document.findElementById('p1');
+	p.innerHTML = "fuck you";
+}
+	</script>
 	</body>
 </html>
