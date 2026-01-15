@@ -20,12 +20,11 @@ javac -d ./build $srcpath/*.java;
 echo "[+] build complete!";
 echo "[+] running compiled program...";
 echo "";
-cd ./build;
-java $assignment_no.$question_no.Main;
+java -cp "build:lib/*" $assignment_no.$question_no.Main;
 echo "";
 echo "[+] execution finished.";
 echo "[+] cleaning the build...";
-rm -r $assignment_no;
+rm -r build
 if [[ $? -ne 0 ]]; then
 	echo "[-] build not cleaned!"
 else
