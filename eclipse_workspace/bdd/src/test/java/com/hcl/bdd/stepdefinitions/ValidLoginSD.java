@@ -1,26 +1,23 @@
 package com.hcl.bdd.stepdefinitions;
 
-import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import com.hcl.bdd.pageobjects.InventoryPage;
 import com.hcl.bdd.pageobjects.LoginPage;
+import com.hcl.bdd.sharedcontext.SeleniumContext;
 
 import io.cucumber.java.en.*;
 
 public class ValidLoginSD {
-	WebDriver driver;
+	SeleniumContext context;
 	LoginPage loginpage;
 	InventoryPage inventorypage;
+	public ValidLoginSD(SeleniumContext context) {
+		this.context = context;
+	}
 
 	@Given("user is on login page")
 	public void userOnLogin() {
-		this.driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		loginpage = new LoginPage(driver);
-		inventorypage = new InventoryPage(driver);
+		loginpage = new LoginPage(context.driver);
+		inventorypage = new InventoryPage(context.driver);
 		loginpage.navigateTo();
 	}
 	@When("user enter valid {string} and {string}")
@@ -35,8 +32,6 @@ public class ValidLoginSD {
 	@Then("user is navigated to the inventory page")
 	public void isOnInventoryPage() {
 		inventorypage.validateLogin();
-		driver.close();
-		driver.quit();
 	}
 	@When("user enter locked out {string} and {string}")
 	public void enterLockedCredentials(String username, String password) {
@@ -46,7 +41,5 @@ public class ValidLoginSD {
 	@Then("user should see error message")
 	public void errorMessage() {
 		loginpage.validateErrorMessage();
-		driver.close();
-		driver.quit();
 	}
 }

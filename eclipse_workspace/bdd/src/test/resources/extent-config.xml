@@ -1,0 +1,7 @@
+<extentreports>
+	<configuration>
+		<reportName>Cucumber Automation Report</reportName>
+		<documentTitle>BDD Test Execution</documentTitle>
+		<theme>dark</theme>
+	</configuration>
+</extentreports>

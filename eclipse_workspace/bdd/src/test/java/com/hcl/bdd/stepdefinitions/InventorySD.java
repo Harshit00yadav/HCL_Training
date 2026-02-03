@@ -1,38 +1,24 @@
 package com.hcl.bdd.stepdefinitions;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import java.time.Duration;
-
 import com.hcl.bdd.pageobjects.InventoryPage;
 import com.hcl.bdd.pageobjects.LoginPage;
+import com.hcl.bdd.sharedcontext.SeleniumContext;
 
 import io.cucumber.java.en.*;
-import io.cucumber.java.Before;
-import io.cucumber.java.After;
 
 public class InventorySD {
-	WebDriver driver;
+	SeleniumContext context;
 	LoginPage loginpage;
 	InventoryPage inventorypage;
 
-	@Before
-	public void setup() {
-		driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-		loginpage = new LoginPage(driver);
-		inventorypage = new InventoryPage(driver);
-	}
-
-	@After
-	public void teardown() {
-		if (driver != null) {
-			driver.quit();
-		}
+	public InventorySD(SeleniumContext context) {
+		this.context = context;
 	}
 
 	@Given("User is already on login page")
 	public void userOnLoginPage() {
+		loginpage = new LoginPage(context.driver);
+		inventorypage = new InventoryPage(context.driver);
 		loginpage.navigateTo();
 	}
 	@When("User enters valid username and password")
